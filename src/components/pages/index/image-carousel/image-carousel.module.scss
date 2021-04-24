@@ -1,0 +1,38 @@
+.image-carousel {
+  img {
+    opacity: 0;
+  }
+}
+
+.image-animate {
+  animation: fadeInOut linear 6s;
+  -webkit-animation: fadeInOut linear 6s;
+  -moz-animation: fadeInOut linear 6s;
+  -o-animation: fadeInOut linear 6s;
+  -ms-animation: fadeInOut linear 6s;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {opacity:0;}
+  10%, 90% {opacity:1;}
+}
+
+@-moz-keyframes fadeInOut {
+  0%, 100% {opacity:0;}
+  10%, 90% {opacity:1;}
+}
+
+@-webkit-keyframes fadeInOut {
+  0%, 100% {opacity:0;}
+  10%, 90% {opacity:1;}
+}
+
+@-o-keyframes fadeInOut {
+  0%, 100% {opacity:0;}
+  10%, 90% {opacity:1;}
+}
+
+@-ms-keyframes fadeInOut {
+  0%, 100% {opacity:0;}
+  10%, 90% {opacity:1;}
+}

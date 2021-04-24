@@ -1,0 +1,26 @@
+[
+  {
+    "name": "LinkedIn",
+    "component": "LinkedIn",
+    "image": "/social-media/linkedin.png",
+    "link": "https://www.linkedin.com/in/jireh-june-nimes-77a603109/"
+  },
+  {
+    "name": "Facebook",
+    "component": "Facebook",
+    "image": "/social-media/facebook.png",
+    "link": "https://www.facebook.com/jirehnimes/"
+  },
+  {
+    "name": "Twitter",
+    "component": "Twitter",
+    "image": "/social-media/twitter.png",
+    "link": "https://twitter.com/jirehnimes"
+  },
+  {
+    "name": "Instagram",
+    "component": "Instagram",
+    "image": "/social-media/instagram.png",
+    "link": "https://www.instagram.com/jirehnimes/"
+  }
+]

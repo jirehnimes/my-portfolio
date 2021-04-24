@@ -1,0 +1,151 @@
+@import 'styles/consts/colors.const';
+@import 'styles/consts/common.const';
+@import 'styles/consts/dimensions.const';
+
+$animate-link: height 1s ease-out;
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: transparent;
+  z-index: 800;
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1em 5em;
+    color: $white;
+    z-index: 900;
+    // overflow: hidden;
+
+    .bar {
+      display: flex;
+      justify-content: space-between;
+
+      .toggle {
+        display: flex;
+        align-items: center;
+        visibility: hidden;
+        cursor: pointer;
+
+        .hamburger {
+          height: 50px;
+          margin: 5px;
+        }
+      }
+    }
+
+    .brand {
+      img {
+        height: 50px;
+        width: auto;
+        margin: 5px;
+      }
+    }
+
+    .links {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      & > div {
+        position: relative;
+      }
+
+      & > div > div {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+
+        &:hover .link-hovered {
+          height: 100px;
+        }
+      }
+
+      .toggle {
+        visibility: hidden;
+      }
+
+      .link {
+        padding: 1em;
+        text-align: center;
+        min-width: 100px;
+      }
+
+      .link-hovered {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        background-color: $blue;
+        z-index: -1;
+        transition: $animate-link;
+        -webkit-transition: $animate-link;
+        -moz-transition: $animate-link;
+        -o-transition: $animate-link;
+        -ms-transition: $animate-link;
+      }
+    }
+
+    .links-visible {
+      visibility: visible !important;
+    }
+  }
+}
+
+@media only #{$mediaType} and (max-width: $dim-tablet) {
+  .navigation {
+    background-color: $black;
+    box-shadow: 0 6px 6px rgba($black, 0.30);
+
+    .wrapper {
+      display: block;
+      padding: 1em 2em;
+
+      .bar {
+        .toggle {
+          visibility: visible;
+        }
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 900;
+        background-color: $black;
+        visibility: hidden;
+
+        * {
+          color: white;
+        }
+
+        .link {
+          display: block;
+        }
+
+        .link-hovered {
+          display: none;
+        }
+      }
+
+      .links-visible {
+        .toggle {
+          position: absolute;
+          top: 1em;
+          right: 1em;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

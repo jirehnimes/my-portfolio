@@ -1,0 +1,25 @@
+@import 'styles/consts/colors.const';
+
+button {
+  display: inline-block;
+  background-color: $blue;
+  cursor: pointer;
+  border: none;
+  padding: 1em 2em;
+  margin-right: 1em;
+  font-weight: bold;
+  border: 2px solid transparent;
+  color: $white;
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid $blue;
+    color: $blue;
+  }
+}
+
+button.block {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+}

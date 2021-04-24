@@ -1,29 +1,59 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import * as React from 'react';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import * as styles from './index.module.scss';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+import Button from 'components/common/button';
+import Layout from 'components/common/layout';
 
-export default IndexPage
+// eslint-disable-next-line max-len
+import socialMediaList from 'components/common/social-media/social-media-list.json';
+
+const IndexPage = () => {
+  const linkedIn = socialMediaList.find((socialMedia) =>
+    socialMedia.name === 'LinkedIn',
+  );
+
+  return (
+    <Layout>
+      <div className={`${styles.index}`}>
+        <div className={styles.index__main}>
+          <div className={styles.index__title}>
+            <div className={styles.index__name}>
+              <h1>JIREH</h1>
+              <h1>NIMES</h1>
+            </div>
+            <div className={styles.index__role}>
+              <h3>Developer</h3>
+            </div>
+          </div>
+          <div className={styles.index__image}>
+            <img src="/images/index/me1.png" alt="Me"/>
+          </div>
+        </div>
+        <div className={styles.index__description}>
+          <div>
+            <p>
+              A Sr. Web Developer in a Korean<br/>e-commerce company based in
+              <br/>Philippines with 4 years of experience <br/>in web development.
+            </p>
+            <p>
+              I'm open to accept freelance or<br/>part-time projects.
+            </p>
+            <div className={styles.button}>
+              <Button href={linkedIn.link}>
+                CONTACT ME
+              </Button>
+            </div>
+            <div className={styles.button}>
+              <Button href={linkedIn.link}>
+                HIRE ME!
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default IndexPage;
